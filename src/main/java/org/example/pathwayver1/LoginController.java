@@ -48,6 +48,17 @@ public class LoginController {
             UserAccount user = userManager.login(id, pass);
             numOfAttempts = 0;
 
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/pathwayver1/DashboardView.fxml"));
+                Scene scene = new Scene(loader.load(), 800, 600);
+                DashboardController controller = loader.getController();
+                controller.setUser(user);
+                Stage stage = (Stage) userIDField.getScene().getWindow();
+                stage.setScene(scene);
+            }catch (Exception x){
+                x.printStackTrace();
+            }
+
             // TODO: Switch to Dashboard when it's ready
 
         } catch (IllegalArgumentException e) {

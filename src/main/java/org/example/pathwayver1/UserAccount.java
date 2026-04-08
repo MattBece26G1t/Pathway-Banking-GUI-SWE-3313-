@@ -51,7 +51,9 @@ public class UserAccount
     // UserAccount Default Constructor //
     public UserAccount()
     {
-
+        accounts.add(new Account(0.0, "Checking"));
+        accounts.add(new Account(0.0, "Savings"));
+        accounts.add(new Account(0.0, "Credit"));
     }
 
     // UserAccount Overloaded Constructor //
@@ -82,6 +84,10 @@ public class UserAccount
         //===User Credential fields====
         setUserID(uID);
         setPassword(pass);
+
+        accounts.add(new Account(0.0, "Checking"));
+        accounts.add(new Account(0.0, "Savings"));
+        accounts.add(new Account(0.0, "Credit"));
     }
 
     // Account method

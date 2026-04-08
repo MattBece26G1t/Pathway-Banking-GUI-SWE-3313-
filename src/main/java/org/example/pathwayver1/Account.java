@@ -2,9 +2,16 @@ package org.example.pathwayver1;
 
 public class Account {
     private double balance;
+    private String accountType;
 
     public Account(double balance){
         this.balance = balance;
+        this.accountType = "Checking";
+    }
+
+    public Account(double balance, String type){
+        this.balance = balance;
+        this.accountType = type;
     }
 
     public void deposit(double amount){
@@ -29,6 +36,9 @@ public class Account {
     }
     public double getBalance(){
         return balance;
+    }
+    public String getAccountType(){
+        return accountType;
     }
 
 
